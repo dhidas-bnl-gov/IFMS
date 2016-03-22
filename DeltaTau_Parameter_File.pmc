@@ -1,0 +1,1147 @@
+﻿I0=0       ;define single PMAC card
+I1=0       ;CS handshake used; no software card address required
+I2=1       ;disable control panel inputs (not used) available for general IO
+I3=2       ;IO handshake control
+I4=0       ;Checksum disabled, serial errors reported immediately      
+I5=2       ;enable PLCs and PLCCs
+I6=1       ;error reporting mode 1
+I7=0       ;default phase clock cycles
+I8=2       ;real time interrupt evry 3rd servo update
+I9=2       ;variable reporting mode 2
+I10=3713991   ;servo interrupt time default - 442 us
+I11=0      ;programmed move start delay default = 0 ms
+I12=0      ;disable time spline look ahead
+I13=0      ;disable forground end of move check
+I14=0      ;retain temporary buffers through power cycle (0=no)
+I15=0      ;choose degrees for angle triggers (vs. radians)
+I16=5      ;number of lines remaining when rotary buffer is caught up an needs more lines   
+I17=5      ;number of lines when the rotary buffer stops requesting more lines
+I18=10     ;fixed buffer warning point
+I19=7007   ;clock source variable number default for PMAC2
+I20=$78400 ;Macro IC 0 BAse Address
+I21=$0     ;Macro IC 1 BAse Address
+I22=$0     ;Macro IC 2 BAse Address
+I23=$0     ;Macro IC 3 BAse Address
+I24=0      ;Main dual port RAM address
+I26=0      ;UMAC Electrical MACRO Enable (not UMAC)
+I27=0      ;Alternate TWS Input Format
+I28=0      ;disable display port IOs are free to use (0=no)
+I29=0      ;mutiplexer alternate address
+I30=0      ;disable compensation table wrap
+I36=1      ;do not enable disabled motors on control-A abort
+I37=$0     ;number of wait states on IO or meamory read
+I38=1      ;enable calcuations during subroutine call
+I39=0      ;default vendor ID for accessory card
+I40=0      ;set minimum 4096 servo cycles before watchdog time out shuts down the card
+I41=0      ;I-Variable Lockout Control (set to allow Ivariable writes - no lockout)
+I42=0      ;Spline/PVT Time Control Mode (set TM{data} first)
+I43=0      ;Auxiliary/Main Serial Port Parser Disable (enable both serial ports to interpert commands)
+I44=0      ;PMAC Ladder Program Enable {Special Firmware Only}
+I45=0      ;Foreground Binary Rotary Buffer Transfer Enable
+I46=0      ;P & Q-Variable Storage Location (P and Q in Flash RAM)
+I47=0      ;DPRAM Motor Data Foreground Reporting Period (see I48)
+I48=0      ;DPRAM Motor Data Foreground Reporting Enable (Diabled see I47, I57)
+I49=0      ;DPRAM Background Data Reporting Enable (disabled see I50)
+I50=0      ;DPRAM Background Data Reporting Period (1=minimum servo cycels)
+I51=0      ;All Compensation Table Enable (disabled for now)
+I52=7      ;CPU Frequency Control (7=max speed)
+I53=12     ;Auxiliary Serial Port Baud Rate Control (38400 not used)
+I54=12     ;Serial Port Baud Rate Control(38400)
+I55=0      ;DPRAM Background Variable Buffers Enable (disabled)
+I56=0      ;DPRAM ASCII Communications Interrupt Enable (disabled)
+I57=0      ;DPRAM Motor Data Background Reporting Enable (disabled)
+I58=0      ;DPRAM ASCII Communications Enable (disable)
+I59=0      ;Assign motors 1-8 to cordinate system 1-8
+I60=15     ;Filtered Velocity Sample Time (see I61) number of servo cycles to calculate velocity
+I61=8      ;Filtered Velocity Shift (see I60) for velocity calculation
+I62=0      ;Internal Message Carriage Return Control (enable CR)
+I63=1      ;Control-X Echo Enable (enabled, allows clear buffers ack message to host)
+I64=0      ;Internal Response Tag Enable (disabled, send no tag to host on internal program commands)
+I65=1      ;User Configuration Variable, used to track user code level
+I67=$0     ;Modbus TCP Buffer Start Address (not used)
+I68=0      ;Coordinate System Activation Control (enable only CS1)
+I69=0      ;Modbus TCP Software Control Panel Start Address (disabled)
+I70=0      ;MACRO IC 0 Node Auxiliary Register Enable (disabled) MACRO not used
+I71=0      ;MACRO IC 0 Node Protocol Type Control (disabled)
+I72=0      ;MACRO IC 1 Node Auxiliary Register Enable (disabled)
+I73=0      ;MACRO IC 1 Node Protocol Type Control (disabled)
+I74=0      ;MACRO IC 2 Node Auxiliary Register Enable (disabled)
+I75=0      ;MACRO IC 2 Node Protocol Type Control (disabled)
+I76=0      ;MACRO IC 3 Node Auxiliary Register Enable (disabled)
+I77=0      ;MACRO IC 3 Node Protocol Type Control (disabled)
+I78=0      ;MACRO Type 1 Master/Slave Communications Timeout (disabled)
+I79=32     ;MACRO Type 1 Master/Master Communications Timeout (disabled)
+I80=0      ;MACRO Ring Check Period (disabled)
+I81=0      ;MACRO Maximum Ring Error Count (default)
+I82=0      ;MACRO Minimum Sync Packet Count (default)
+I83=0      ;MACRO Parallel Ring Enable Mask (disabled)
+I84=0      ;MACRO IC # for Master Communications (default)
+I85=0      ;MACRO Ring Order Number (default)
+I90=$39    ;VME Address Modifier (set to 24 bit) VME not used
+I91=$04    ;VME Address Modifier Don’t Care Bits (default)
+I92=$FF    ;VME Base Address Bits A31-A24 (default)
+I93=$7F    ;VME Mailbox Base Address Bits A15-A08 ISA DPRAM Base Address Bits A15-A14 & Control
+I94=$A0    ;VME Mailbox Base Address Bits A15-A08 ISA DPRAM Base Address Bits A15-A14 & Control
+I95=$7     ;VME Interrupt Level
+I96=$A1    ;VME Interrupt Vector
+I97=$00    ;VME DPRAM Base Address Bits A23-A20
+I98=$60    ;VME DPRAM Enable (disabled)
+I99=$30    ;VME Address Width Control (default)
+
+I100=1           ;enable motor Master X axis
+I101=1           ;commutate motor though PAMC using X registers (see Ixx70-Ixx83)
+I102=$78002      ;motor command output address
+I103=$3501       ;motor position feedback address
+I104=$3501       ;motor velocity feedback address
+I105=$35c0       ;Master feedback address
+I106=0           ;set this motor to be a Master not a follower
+I107=96          ;Motor xx Master (Handwheel) Scale Factor
+I108=96          ;Motor xx Position Scale Factor
+I109=96          ;Motor xx Velocity Scale Factor
+I110=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I111=320000      ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I112=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I113=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I114=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I115=20          ;deceleration value in cts/msec^2
+I116=100         ;max velocity set to 10 mm/sec in CTS/msec
+I117=2           ;max acceleration set to 2 cts/ms^2
+I119=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I120=0           ;max jog/home accel time, set low so I119 dominates
+I121=50          ;max s-cureve jog/homing acceleration 
+I122=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I123=-20         ;homing speed and direction in cts/msec
+I124=$00001      ;Set a whole bunch of control bits
+I125=$78000      ;set position capture address
+I126=0           ;Home offset 
+I127=0           ;rollover psotion range (diabled treat all axes as linear)
+I128=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I129=-78         ;current offset (mode4?? see Ixx79,82)
+I130=8000        ;PID proportional gain parameter
+I131=10000       ;PID dirivative gain parameter
+I132=12000       ;PID Velocity feed forward gain parameter
+I133=40000       ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I134=1           ;PID Integrator on only when velocity is commanded to 0
+I135=17000       ;PID acceleration feedforward 
+I136=0           ;notch filter N1 value
+I137=0           ;notch filter N2 value
+I138=0           ;notch filter D1 value
+I139=0           ;notch filter D2 value
+I140=0           ;net desired position filter (disabled)
+I141=0           ;desired position limit range (+/- soft limit position)
+I142=$0          ;ampligfier flag address (diabled)
+I143=$0          ;overtravel limit flag address (disabled)
+I144=$0          ;MACRO slave motor enable (disabled)
+I155=$0          ;custom commutation buffer address (disabled)
+I156=0           ;commutation delay compensation
+I157=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I158=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I159=0           ;User written comutation (disabled)
+I160=0           ;servo cycle extention period (unused)
+I161=0.00388086          ;current loop intergral gain 
+I162=0           ;current loop forward path proportional gain See I176 use one or the other
+I163=4194304     ;integration limit
+I164=0           ;deadband gain factor (disabled not expecting deadband)
+I165=16          ;deadband size in counts  (setup=16)
+I166=2053        ;PWM Scale factor (default)
+I167=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I168=0           ;friction feedforward (disabled)
+I169=24678       ;max DAC output based on 16 bit DAC (default)
+I170=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I171=20000        ;number of encoder counts per rev (2mm lead ball screw)
+I172=1365        ;number of degrees per phase (2048/3)
+I173=0           ;phase finding output value
+I174=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I175=0           ;phase position offset
+I176=0.8684919         ;current loop back-path proportional gain See I162 use one or the other
+I177=0           ;magnetization current for AC synchronousinduction motors (not used)
+I178=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I179=-109         ;second phase offset for current loop I182>1 see also I129
+I180=0           ;no power on stepper phasing with the motor disabled
+I181=$78000      ;no absolute position address for power on phasing
+I182=$78006      ;current loop feedback address
+I183=$78001      ;comutation position address
+I184=$FFF000     ;current loop feedback mask word
+I185=0           ;backlash take up rate
+I186=0           ;backalsh size
+I187=64          ;backlash hysteresis
+I188=0           ;number of in-position scans
+I190=0           ;rapid mode speed select 0=I122, 1=I116
+I191=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I192=10          ;jog move calcuation timein ms
+I195=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I196=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I197=0           ;position capture and triggerd mode
+I198=0           ;third resolver set-up (not used)
+I199=0           ;second resolver ratio (not used)
+
+I200=1           ;enable motor Slave X axis
+I201=1           ;commutate motor though PAMC using registers (see Ixx70-Ixx83)
+I202=$7800A      ;motor command output address
+I203=$003502     ;motor position feedback address
+I204=$003502     ;motor velocity feedback address
+I205=$003501     ;Master feedback address
+I206=0           ;set this motor to be a follower of motor 1
+I207=96          ;Motor xx Master (Handwheel) Scale Factor
+I208=96          ;Motor xx Position Scale Factor
+I209=96          ;Motor xx Velocity Scale Factor
+I210=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I211=320000       ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I212=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I213=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I214=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I215=20          ;deceleration value in cts/msec^2
+I216=100         ;max velocity set to 10 mm/sec in CTS/msec
+I217=2           ;max acceleration set to 2 cts/ms^2
+I219=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I220=0           ;max jog/home accel time, set low so I119 dominates
+I221=50          ;max s-curve jog/homing acceleration 
+I222=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I223=-20         ;homing speed and direction in cts/msec
+I224=$00001      ;Set a whole bunch of control bits
+I225=$78008      ;set position capture address
+I226=0           ;Home offset 
+I227=0           ;rollover psotion range (diabled treat all axes as linear)
+I228=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I229=-78         ;current offset (mode4?? see Ixx79,82)
+I230=10000        ;PID proportional gain parameter
+I231=4000        ;PID dirivative gain parameter
+I232=6000        ;PID Velocity feed forward gain parameter
+I233=40000       ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I234=1           ;PID Integrator on only when velocity is commanded to 0
+I235=18000       ;PID acceleration feedforward 
+I236=0           ;notch filter N1 value
+I237=0           ;notch filter N2 value
+I238=0           ;notch filter D1 value
+I239=0           ;notch filter D2 value
+I240=0           ;net desired position filter (disabled)
+I241=0           ;desired position limit range (+/- soft limit position)
+I242=$0          ;ampligfier flag address (diabled)
+I243=$0          ;overtravel limit flag address (disabled)
+I244=$0          ;MACRO slave motor enable (disabled)
+I255=$0          ;custom commutation buffer address (disabled)
+I256=0           ;commutation delay compensation
+I257=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I258=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I259=0           ;User written comutation (disabled)
+I260=0           ;servo cycle extention period (unused)
+I261=0.02983701229           ;current loop intergral gain (disabled)
+I262=0           ;current loop forward path proportional gain See I176 use one or the other
+I263=4194304     ;integration limit
+I264=0           ;deadband gain factor (disabled not expecting deadband)
+I265=16          ;deadband size in counts  (setup=16)
+I266=6201        ;PWM Scale factor (default)
+I267=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I268=0           ;friction feedforward (disabled)
+I269=24678       ;max DAC output based on 16 bit DAC (default)
+I270=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I271=20000       ;number of encoder counts per rev (2mm lead ball screw)
+I272=1365        ;number of degrees per phase (2048/3)
+I273=0           ;phase finding output value
+I274=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I275=0           ;phase position offset
+I276=0.4650788307          ;current loop back-path proportional gain See I162 use one or the other
+I277=0           ;magnetization current for AC synchronousinduction motors (not used)
+I278=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I279=-51         ;second phase offset for current loop I182>1 see also I129
+I280=0           ;no power on stepper phasing with the motor disabled
+I281=$78008      ;no absolute position address for power on phasing
+I282=$7800E      ;current loop feedback address
+I283=$78009      ;comutation position address
+I284=$FFF000     ;current loop feedback mask word
+I285=0           ;backlash take up rate
+I286=0           ;backalsh size
+I287=64          ;backlash hysteresis
+I288=0           ;number of in-position scans
+I290=0           ;rapid mode speed select 0=I122, 1=I116
+I291=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I292=10          ;jog move calcuation timein ms
+I295=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I296=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I297=0           ;position capture and triggerd mode
+I298=0           ;third resolver set-up (not used)
+I299=0           ;second resolver ratio (not used)
+
+I300=1           ;enable motor Master Y axis
+I301=1           ;commutate motor though PAMC using registers (see Ixx70-Ixx83)
+I302=$78012      ;motor command output address
+I303=$3503       ;motor position feedback address
+I304=$3503       ;motor velocity feedback address
+I305=$35c0       ;Master feedback address
+I306=0           ;set this motor to be a Master not a follower
+I307=96          ;Motor xx Master (Handwheel) Scale Factor
+I308=96          ;Motor xx Position Scale Factor
+I309=96          ;Motor xx Velocity Scale Factor
+I310=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I311=320000       ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I312=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I313=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I314=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I315=20          ;deceleration value in cts/msec^2
+I316=100          ;max velocity set to 10 mm/sec in CTS/msec
+I317=2           ;max acceleration set to 2 cts/ms^2
+I319=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I320=0           ;max jog/home accel time, set low so I119 dominates
+I321=50          ;max s-cureve jog/homing acceleration 
+I322=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I323=-20         ;homing speed and direction in cts/msec
+I324=$00001      ;Set a whole bunch of control bits
+I325=$78010      ;set position capture address
+I326=0           ;Home offset 
+I327=0           ;rollover psotion range (diabled treat all axes as linear)
+I328=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I329=-94         ;current offset (mode4?? see Ixx79,82)
+I330=34000       ;PID proportional gain parameter
+I331=4000        ;PID dirivative gain parameter
+I332=4000       ;PID Velocity feed forward gain parameter
+I333=40000       ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I334=1           ;PID Integrator on only when velocity is commanded to 0
+I335=4000        ;PID acceleration feedforward
+I336=0           ;notch filter N1 value
+I337=0           ;notch filter N2 value
+I338=0           ;notch filter D1 value
+I339=0           ;notch filter D2 value
+I340=0           ;net desired position filter (disabled)
+I341=0           ;desired position limit range (+/- soft limit position)
+I342=$0          ;ampligfier flag address (diabled)
+I343=$0          ;overtravel limit flag address (disabled)
+I344=$0          ;MACRO slave motor enable (disabled)
+I355=$0          ;custom commutation buffer address (disabled)
+I356=0           ;commutation delay compensation
+I357=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I358=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I359=0           ;User written comutation (disabled)
+I360=0           ;servo cycle extention period (unused)
+I361=0.02430796623           ;current loop intergral gain (disabled)
+I362=0           ;current loop forward path proportional gain See I176 use one or the other
+I363=4194304     ;integration limit
+I364=0           ;deadband gain factor (disabled not expecting deadband)
+I365=16          ;deadband size in counts  (setup=16)
+I366=6201        ;PWM Scale factor (default)
+I367=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I368=0           ;friction feedforward (disabled)
+I369=24678       ;max DAC output based on 16 bit DAC (default)
+I370=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I371=20000       ;number of encoder counts per rev (2mm lead ball screw)
+I372=1365        ;number of degrees per phase (2048/3)
+I373=0           ;phase finding output value
+I374=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I375=0           ;phase position offset
+I376=0.3803489208          ;current loop back-path proportional gain See I162 use one or the other
+I377=0           ;magnetization current for AC synchronousinduction motors (not used)
+I378=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I379=-51         ;second phase offset for current loop I182>1 see also I129
+I380=0           ;no power on stepper phasing with the motor disabled
+I381=$78010      ;no absolute position address for power on phasing
+I382=$78016      ;current loop feedback address
+I383=$78011      ;comutation position address
+I384=$FFF000     ;current loop feedback mask word
+I385=0           ;backlash take up rate
+I386=0           ;backalsh size
+I387=64          ;backlash hysteresis
+I388=0           ;number of in-position scans
+I390=0           ;rapid mode speed select 0=I122, 1=I116
+I391=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I392=10          ;jog move calcuation timein ms
+I395=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I396=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I397=0           ;position capture and triggerd mode
+I398=0           ;third resolver set-up (not used)
+I399=0           ;second resolver ratio (not used)
+
+I400=1           ;enable motor Slave Y axis
+I401=1           ;commutate motor though PAMC using z registers (see Ixx70-Ixx83)
+I402=$7801A      ;motor command output address
+I403=$3504       ;motor position feedback address
+I404=$3504       ;motor velocity feedback address
+I405=$3503       ;Master feedback address
+I406=0           ;set this motor to be a follower of motor 3
+I407=96          ;Motor xx Master (Handwheel) Scale Factor
+I408=96          ;Motor xx Position Scale Factor
+I409=96          ;Motor xx Velocity Scale Factor
+I410=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I411=320000      ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I412=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I413=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I414=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I415=20          ;deceleration value in cts/msec^2
+I416=100         ;max velocity set to 10 mm/sec in CTS/msec
+I417=2           ;max acceleration set to 2 cts/ms^2
+I419=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I420=0           ;max jog/home accel time, set low so I119 dominates
+I421=50          ;max s-cureve jog/homing acceleration 
+I422=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I423=-20         ;homing speed and direction in cts/msec
+I424=$00001      ;Set a whole bunch of control bits
+I425=$78018      ;set position capture address
+I426=0           ;Home offset 
+I427=0           ;rollover psotion range (diabled treat all axes as linear)
+I428=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I429=-78         ;current offset (mode4?? see Ixx79,82)
+I430=40000       ;PID proportional gain parameter
+I431=1000        ;PID dirivative gain parameter
+I432=4000       ;PID Velocity feed forward gain parameter
+I433=40000       ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I434=1           ;PID Integrator on only when velocity is commanded to 0
+I435=4000        ;PID acceleration feedforward
+I436=0           ;notch filter N1 value
+I437=0           ;notch filter N2 value
+I438=0           ;notch filter D1 value
+I439=0           ;notch filter D2 value
+I440=0           ;net desired position filter (disabled)
+I441=0           ;desired position limit range (+/- soft limit position)
+I442=$0          ;ampligfier flag address (diabled)
+I443=$0          ;overtravel limit flag address (disabled)
+I444=$0          ;MACRO slave motor enable (disabled)
+I455=$0          ;custom commutation buffer address (disabled)
+I456=0           ;commutation delay compensation
+I457=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I458=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I459=0           ;User written comutation (disabled)
+I460=0           ;servo cycle extention period (unused)
+I461=0.02836692333          ;current loop intergral gain (disabled)
+I462=0           ;current loop forward path proportional gain See I176 use one or the other
+I463=4194304     ;integration limit
+I464=0           ;deadband gain factor (disabled not expecting deadband)
+I465=16          ;deadband size in counts  (setup=16)
+I466=6201        ;PWM Scale factor (default)
+I467=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I468=0           ;friction feedforward (disabled)
+I469=24678       ;max DAC output based on 16 bit DAC (default)
+I470=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I471=20000       ;number of encoder counts per rev (2mm lead ball screw)
+I472=1365        ;number of degrees per phase (2048/3)
+I473=0           ;phase finding output value
+I474=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I475=0           ;phase position offset
+I476=0.4544799328          ;current loop back-path proportional gain See I162 use one or the other
+I477=0           ;magnetization current for AC synchronousinduction motors (not used)
+I478=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I479=-51         ;second phase offset for current loop I182>1 see also I129
+I480=0           ;no power on stepper phasing with the motor disabled
+I481=$78018      ;no absolute position address for power on phasing
+I482=$7801E      ;current loop feedback address
+I483=$78019      ;comutation position address
+I484=$FFF000     ;current loop feedback mask word
+I485=0           ;backlash take up rate
+I486=0           ;backalsh size
+I487=64          ;backlash hysteresis
+I488=0           ;number of in-position scans
+I490=0           ;rapid mode speed select 0=I122, 1=I116
+I491=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I492=10          ;jog move calcuation timein ms
+I495=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I496=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I497=0           ;position capture and triggerd mode
+I498=0           ;third resolver set-up (not used)
+I499=0           ;second resolver ratio (not used)
+
+I500=1           ;enable motor Master z axis
+I501=1           ;commutate motor though PAMC using z registers (see Ixx70-Ixx83)
+I502=$78102      ;motor command output address
+I503=$3505       ;motor position feedback address
+I504=$3505       ;motor velocity feedback address
+I505=$35c0       ;Master feedback address
+I506=0           ;set this motor to be a Master not a follower
+I507=96          ;Motor xx Master (Handwheel) Scale Factor
+I508=96          ;Motor xx Position Scale Factor
+I509=96          ;Motor xx Velocity Scale Factor
+I510=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I511=320000       ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I512=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I513=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I514=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I515=20          ;deceleration value in cts/msec^2
+I516=100         ;max velocity set to 10 mm/sec in CTS/msec
+I517=2           ;max acceleration set to 2 cts/ms^2
+I519=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I520=0           ;max jog/home accel time, set low so I119 dominates
+I521=50          ;max s-cureve jog/homing acceleration 
+I522=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I523=-20         ;homing speed and direction in cts/msec
+I524=$00001      ;Set a whole bunch of control bits
+I525=$78100      ;set position capture address
+I526=0           ;Home offset 
+I527=0           ;rollover psotion range (diabled treat all axes as linear)
+I528=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I529=-83         ;current offset (mode4?? see Ixx79,82)
+I530=8000        ;PID proportional gain parameter
+I531=2000        ;PID dirivative gain parameter
+I532=6000       ;PID Velocity feed forward gain parameter
+I533=40000       ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I534=1           ;PID Integrator on only when velocity is commanded to 0
+I535=2000        ;PID acceleration feedforward 
+I536=0           ;notch filter N1 value
+I537=0           ;notch filter N2 value
+I538=0           ;notch filter D1 value
+I539=0           ;notch filter D2 value
+I540=0           ;net desired position filter (disabled)
+I541=0           ;desired position limit range (+/- soft limit position)
+I542=$0          ;ampligfier flag address (diabled)
+I543=$0          ;overtravel limit flag address (disabled)
+I544=$0          ;MACRO slave motor enable (disabled)
+I555=$0          ;custom commutation buffer address (disabled)
+I556=0           ;commutation delay compensation
+I557=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I558=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I559=0           ;User written comutation (disabled)
+I560=0           ;servo cycle extention period (unused)
+I561=0.02459394932           ;current loop intergral gain (disabled)
+I562=0           ;current loop forward path proportional gain See I176 use one or the other
+I563=4194304     ;integration limit
+I564=0           ;deadband gain factor (disabled not expecting deadband)
+I565=16          ;deadband size in counts  (setup=16)
+I566=6201        ;PWM Scale factor (default)
+I567=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I568=0           ;friction feedforward (disabled)
+I569=24678       ;max DAC output based on 16 bit DAC (default)
+I570=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I571=20000       ;number of encoder counts per rev (2mm lead ball screw)
+I572=1365        ;number of degrees per phase (2048/3)
+I573=0           ;phase finding output value
+I574=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I575=0           ;phase position offset
+I576=0.3818798065          ;current loop back-path proportional gain See I162 use one or the other
+I577=0           ;magnetization current for AC synchronousinduction motors (not used)
+I578=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I579=-160        ;second phase offset for current loop I182>1 see also I129
+I580=0           ;no power on stepper phasing with the motor disabled
+I581=$78100      ;no absolute position address for power on phasing
+I582=$78106      ;current loop feedback address
+I583=$78101      ;comutation position address
+I584=$FFF000     ;current loop feedback mask word
+I585=0           ;backlash take up rate
+I586=0           ;backalsh size
+I587=64          ;backlash hysteresis
+I588=0           ;number of in-position scans
+I590=0           ;rapid mode speed select 0=I122, 1=I116
+I591=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I592=10          ;jog move calcuation timein ms
+I595=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I596=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I597=0           ;position capture and triggerd mode
+I598=0           ;third resolver set-up (not used)
+I599=0           ;second resolver ratio (not used)
+
+I600=1           ;enable motor Slave z axis
+I601=1           ;commutate motor though PAMC using Z registers (see Ixx70-Ixx83)
+I602=$7810A      ;motor command output address
+I603=$3506       ;motor position feedback address
+I604=$3506       ;motor velocity feedback address
+I605=$3505       ;Master feedback address
+I606=0           ;set this motor to be a followerof motor 5
+I607=96          ;Motor xx Master (Handwheel) Scale Factor
+I608=96          ;Motor xx Position Scale Factor
+I609=96          ;Motor xx Velocity Scale Factor
+I610=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I611=320000       ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I612=160000       ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I613=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I614=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I615=20          ;deceleration value in cts/msec^2
+I616=100         ;max velocity set to 10 mm/sec in CTS/msec
+I617=2           ;max acceleration set to 2 cts/ms^2
+I619=10          ;max jog or hming acceleration set to 10 mm/sec^2 (see I120,121)
+I620=0           ;max jog/home accel time, set low so I119 dominates
+I621=50          ;max s-cureve jog/homing acceleration 
+I622=20          ;jog speed set to 2 mm/sec (2 cts/msec)
+I623=-20         ;homing speed and direction in cts/msec
+I624=$00001      ;Set a whole bunch of control bits
+I625=$78108      ;set position capture address
+I626=0           ;Home offset 
+I627=0           ;rollover psotion range (diabled treat all axes as linear)
+I628=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I629=-122        ;current offset (mode4?? see Ixx79,82)
+I630=5000        ;PID proportional gain parameter
+I631=3000        ;PID dirivative gain parameter
+I632=8000        ;PID Velocity feed forward gain parameter
+I633=40000        ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I634=1           ;PID Integrator on only when velocity is commanded to 0
+I635=2000        ;PID acceleration feedforward 
+I636=0           ;notch filter N1 value
+I637=0           ;notch filter N2 value
+I638=0           ;notch filter D1 value
+I639=0           ;notch filter D2 value
+I640=0           ;net desired position filter (disabled)
+I641=0           ;desired position limit range (+/- soft limit position)
+I642=$0          ;ampligfier flag address (diabled)
+I643=$0          ;overtravel limit flag address (disabled)
+I644=$0          ;MACRO slave motor enable (disabled)
+I655=$0          ;custom commutation buffer address (disabled)
+I656=0           ;commutation delay compensation
+I657=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I658=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I659=0           ;User written comutation (disabled)
+I660=0           ;servo cycle extention period (unused)
+I661=0.02226495743          ;current loop intergral gain (disabled)
+I662=0           ;current loop forward path proportional gain See I176 use one or the other
+I663=4194304     ;integration limit
+I664=0           ;deadband gain factor (disabled not expecting deadband)
+I665=16          ;deadband size in counts  (setup=16)
+I666=6201        ;PWM Scale factor (default)
+I667=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I668=0           ;friction feedforward (disabled)
+I669=24678       ;max DAC output based on 16 bit DAC (default)
+I670=4           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I671=20000       ;number of encoder counts per rev (2mm lead ball screw)
+I672=1365        ;number of degrees per phase (2048/3)
+I673=0           ;phase finding output value
+I674=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I675=0           ;phase position offset
+I676=0.3693919182          ;magnetization current for AC synchronousinduction motors 
+I678=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I679=-174        ;second phase offset for current loop I182>1 see also I129
+I680=0           ;no power on stepper phasing with the motor disabled
+I681=$78108      ;no absolute position address for power on phasing
+I682=$7810E      ;current loop feedback address
+I683=$78109      ;comutation position address
+I684=$FFF000     ;current loop feedback mask word
+I685=0           ;backlash take up rate
+I686=0           ;backalsh size
+I687=64          ;backlash hysteresis
+I688=0           ;number of in-position scans
+I690=0           ;rapid mode speed select 0=I122, 1=I116
+I691=$E10000     ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I692=10          ;jog move calcuation timein ms
+I695=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I696=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I697=0           ;position capture and triggerd mode
+I698=0           ;third resolver set-up (not used)
+I699=0           ;second resolver ratio (not used)
+
+I700=1           ;enable motorUpstream Rotarr (Master) 
+I701=0           ;commutate motor though PAMC using registers (see Ixx70-Ixx83)
+I702=$78114      ;motor command output address
+I703=$3507       ;motor position feedback address
+I704=$3507       ;motor velocity feedback address
+I705=$35c0       ;Master feedback address
+I706=0           ;set this motor to be a Master not a follower
+I707=96          ;Motor xx Master (Handwheel) Scale Factor
+I708=96          ;Motor xx Position Scale Factor
+I709=96          ;Motor xx Velocity Scale Factor
+I710=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I711=2880000     ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I712=2000000     ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I713=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I714=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I715=20          ;deceleration value in cts/msec^2
+I716=50          ;max velocity set to 5 mm/sec in CTS/msec
+I717=2           ;max acceleration set to 2 cts/ms^2
+I719=1           ;max jog or homing acceleration set to 10 mm/sec^2 (see I120,121)
+I720=0           ;max jog/home accel time, set low so Ixx19 dominates
+I721=50          ;max s-cureve jog/homing acceleration 
+I722=90         ;jog speed set to 2 mm/sec (2 cts/msec)
+I723=-20         ;homing speed and direction in cts/msec
+I724=$120001     ;Set a whole bunch of control bits
+I725=$78110      ;set position capture address
+I726=0           ;Home offset 
+I727=0           ;rollover psotion range (diabled treat all axes as linear)
+I728=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I729=0           ;current offset (mode4?? see Ixx79,82)
+I730=150         ;PID proportional gain parameter
+I731=4500           ;PID dirivative gain parameter
+I732=15042       ;PID Velocity feed forward gain parameter
+I733=0           ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I734=0           ;PID Integrator on only when velocity is commanded to 0
+I735=0           ;PID acceleration feedforward (disabled)
+I736=0           ;notch filter N1 value
+I737=0           ;notch filter N2 value
+I738=0           ;notch filter D1 value
+I739=0           ;notch filter D2 value
+I740=0           ;net desired position filter (disabled)
+I741=0           ;desired position limit range (+/- soft limit position)
+I742=$0          ;ampligfier flag address (diabled)
+I743=$0          ;overtravel limit flag address (disabled)
+I744=$0          ;MACRO slave motor enable (disabled)
+I755=$0          ;custom commutation buffer address (disabled)
+I756=0           ;commutation delay compensation
+I757=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I758=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I759=0           ;User written comutation (disabled)
+I760=0           ;servo cycle extention period (unused)
+I761=0.0         ;current loop intergral gain (disabled)
+I762=0           ;current loop forward path proportional gain See I176 use one or the other
+I763=4194304     ;integration limit
+I764=0           ;deadband gain factor (disabled not expecting deadband)
+I765=16          ;deadband size in counts  (setup=16)
+I766=6201        ;PWM Scale factor (default)
+I767=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I768=0           ;friction feedforward (disabled)
+I769=32767       ;max DAC output based on 16 bit DAC (default)
+I770=0           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I771=36000       ;number of encoder counts per rev
+I772=0           ;number of degrees per phase (2048/3)
+I773=0           ;phase finding output value
+I774=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I775=0           ;phase position offset
+I776=0.0         ;current loop back-path proportional gain See I162 use one or the other
+I777=0           ;magnetization current for AC synchronousinduction motors (not used)
+I778=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I779=0           ;second phase offset for current loop I182>1 see also I129
+I780=0           ;no power on stepper phasing with the motor disabled
+I781=$0          ;no absolute position address for power on phasing
+I782=$0          ;current loop feedback address
+I783=$0          ;comutation position address
+I784=$FFF000     ;current loop feedback mask word
+I785=0           ;backlash take up rate
+I786=0           ;backalsh size
+I787=64          ;backlash hysteresis
+I788=0           ;number of in-position scans
+I790=0           ;rapid mode speed select 0=I122, 1=I116
+I791=$0          ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I792=10          ;jog move calcuation timein ms
+I795=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I796=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I797=0           ;position capture and triggerd mode
+I798=0           ;third resolver set-up (not used)
+I799=0           ;second resolver ratio (not used)
+
+I800=1           ;enable motor Rotary Downstream, (slave)
+I801=0           ;commutate motor though PAMC using Z registers (see Ixx70-Ixx83)
+I802=$7811C      ;motor command output address
+I803=$3508       ;motor position feedback address
+I804=$3508       ;motor velocity feedback address
+I805=$3507       ;Master feedback address
+I806=0           ;set this motor to be a follower of Master motor 8
+I807=96          ;Motor xx Master (Handwheel) Scale Factor
+I808=96          ;Motor xx Position Scale Factor
+I809=96          ;Motor xx Velocity Scale Factor
+I810=$0          ;Motor power on position address (set to zero, no absolute encoders to read on POR)
+I811=2880000     ;Following error setting (32000 = 2000 counts or .2 mm)(set to 2 mm)
+I812=2000000     ;following error warning setting (16000 = 1000 counts or .1 mm)(set to 1 mm)
+I813=0           ;Positive software limit position in counts (was 1300000 disabled for debug)
+I814=0           ;Negative software limit position in counts (was -30000 disabled for debug)
+I815=20          ;deceleration value in cts/msec^2
+I816=50          ;max velocity set to 5 mm/sec in CTS/msec
+I817=2           ;max acceleration set to 2 cts/ms^2
+I819=1           ;max jog or homing acceleration set to 10 mm/sec^2 (see I120,121)
+I820=0           ;max jog/home accel time, set low so I119 dominates
+I821=50          ;max s-cureve jog/homing acceleration 
+I822=90         ;jog speed set to 2 mm/sec (2 cts/msec)
+I823=-20        ;homing speed and direction in cts/msec
+I824=$120001     ;Set a whole bunch of control bits
+I825=$78118      ;set position capture address
+I826=0           ;Home offset 
+I827=0           ;rollover psotion range (diabled treat all axes as linear)
+I828=160         ;in-position range set to 5 microns (ie. 50 cts * 16)
+I829=0           ;current offset (mode4?? see Ixx79,82)
+I830=150         ;PID proportional gain parameter
+I831=4500           ;PID dirivative gain parameter
+I832=15042       ;PID Velocity feed forward gain parameter
+I833=0           ;PID integral gain parameter (see limit at Ixx63) limits speed of integrator
+I834=0           ;PID Integrator on only when velocity is commanded to 0
+I835=0           ;PID acceleration feedforward (disabled)
+I836=0           ;notch filter N1 value
+I837=0           ;notch filter N2 value
+I838=0           ;notch filter D1 value
+I839=0           ;notch filter D2 value
+I840=0           ;net desired position filter (disabled)
+I841=0           ;desired position limit range (+/- soft limit position)
+I842=$0          ;ampligfier flag address (diabled)
+I843=$0          ;overtravel limit flag address (disabled)
+I844=$0          ;MACRO slave motor enable (disabled)
+I855=$0          ;custom commutation buffer address (disabled)
+I856=0           ;commutation delay compensation
+I857=24000       ;I^2T normal current setting Normal amps =3.3/16*32767=6825 (setup = 12339)
+I858=50000       ;I^2T Peak current setting, Peak amps =4.2/16*32767=8601    (setup = 23059)
+I859=0           ;User written comutation (disabled)
+I860=0           ;servo cycle extention period (unused)
+I861=0           ;current loop intergral gain (disabled)
+I862=0           ;current loop forward path proportional gain See I176 use one or the other
+I863=4194304     ;integration limit
+I864=0           ;deadband gain factor (disabled not expecting deadband)
+I865=16          ;deadband size in counts  (setup=16)
+I866=6201        ;PWM Scale factor (default)
+I867=4194304     ;position error limit for filter stability set to 20 mm in counts * 16 (Setup = 4194304 too big)
+I868=0           ;friction feedforward (disabled)
+I869=32767       ;max DAC output based on 16 bit DAC (default)
+I870=0           ;number of pole pairs in an 8 pole motor see PArker Be341JJ
+I871=36000       ;number of encoder counts per rev 
+I872=0           ;number of degrees per phase (2048/3)
+I873=0           ;phase finding output value
+I874=0           ;number of servo cycles to wait for phasing test * 256 (1.5 seconds)
+I875=0           ;phase position offset
+I876=0.0         ;magnetization current for AC synchronousinduction motors 
+I878=0           ;Slip factor allowed on  AC synchronousinduction motors (not used)
+I879=0           ;second phase offset for current loop I182>1 see also I129
+I880=0           ;no power on stepper phasing with the motor disabled
+I881=$0          ;no absolute position address for power on phasing
+I882=$0          ;current loop feedback address
+I883=$0          ;comutation position address
+I884=$FFF000     ;current loop feedback mask word
+I885=0           ;backlash take up rate
+I886=0           ;backalsh size
+I887=64          ;backlash hysteresis
+I888=0           ;number of in-position scans
+I890=0           ;rapid mode speed select 0=I122, 1=I116
+I891=$0          ;controls how I181 is used in power on phasing with absolute encoder (not used)
+I892=10          ;jog move calcuation timein ms
+I895=$0          ;controls how I110 is used in power on position format (should be =0 until homed)
+I896=0           ;controls how I102 is used and if PMAC is commutation and controlling current loop 
+I897=0           ;position capture and triggerd mode
+I898=0           ;third resolver set-up (not used)
+I899=0           ;second resolver ratio (not used)
+
+I7130=7          ;encoder conversion table pointer for axis 7 encoder feedback
+I7140=7          ;encoder conversion table pointer for axis 8 encoder feedback
+I7136=3          ;output mode for axis 7 as stepper
+I7146=3          ;output mode for axis 8 as stepper
+
+M1->Y:$78800,0,1        ; Input 01 J6 Pin#1
+M2->Y:$78800,1,1        ; Input 02 J6 Pin#20
+M3->Y:$78800,2,1        ; Input 03 J6 Pin#2
+M4->Y:$78800,3,1        ; Input 04 J6 Pin#21
+M5->Y:$78800,4,1        ; Input 05 J6 Pin#3
+M6->Y:$78800,5,1        ; Input 06 J6 Pin#22
+M7->Y:$78800,6,1        ; Input 07 J6 Pin#4
+M8->Y:$78800,7,1        ; Input 08 J6 Pin#23
+M9->Y:$78801,0,1        ; Input 09 J6 Pin#5
+M10->Y:$78801,1,1       ; Input 10 J6 Pin#24
+M11->Y:$78801,2,1       ; Input 11 J6 Pin#6
+M12->Y:$78801,3,1       ; Input 12 J6 Pin#25
+M13->Y:$78801,4,1       ; Input 13 J6 Pin#7
+M14->Y:$78801,5,1       ; Input 14 J6 Pin#26
+M15->Y:$78801,6,1       ; Input 15 J6 Pin#8
+M16->Y:$78801,7,1       ; Input 16 J6 Pin#27
+M33->Y:$078802,0,1      ; Output 1 J6 Pin#12 Pin#30
+M34->Y:$078802,1,1      ; Output 2 J6 Pin#13 Pin#31
+M35->Y:$078802,2,1      ; Output 3 J6 Pin#14 Pin#32
+M36->Y:$078802,3,1      ; Output 4 J6 Pin#15 Pin#33
+M37->Y:$078802,4,1      ; Output 5 J6 Pin#16 Pin#34
+M38->Y:$078802,5,1      ; Output 6 J6 Pin#17 Pin#35
+M39->Y:$078802,6,1      ; Output 7 J6 Pin#18 Pin#36
+M40->Y:$078802,7,1      ; Output 8 J6 Pin#19 Pin#37
+M17->Y:$78803,0,1       ; Input 17 J7 Pin#1
+M18->Y:$78803,1,1       ; Input 18 J7 Pin#20
+M19->Y:$78803,2,1       ; Input 19 J7 Pint#2
+M20->Y:$78803,3,1       ; Input 20 J7 Pin#21
+M21->Y:$78803,4,1       ; Input 21 J7 Pin#3
+M22->Y:$78803,5,1       ; Input 22 J7 Pin#22
+M23->Y:$78803,6,1     	; Input 23 J7 Pin#4
+M24->Y:$78803,7,1       ; Input 24 J7 Pin#23
+M25->Y:$78804,0,1       ; Input 25 J7 Pin#5
+M26->Y:$78804,1,1       ; Input 26 J7 Pin#24
+M27->Y:$78804,2,1       ; Input 27 J7 Pin#6
+M28->Y:$78804,3,1       ; Input 28 J7 Pin#25
+M29->Y:$78804,4,1       ; Input 29 J7 Pin#7
+M30->Y:$78804,5,1       ; Input 30 J7 Pin#26
+M31->Y:$78804,6,1       ; Input 31 J7 Pin#8
+M32->Y:$78804,7,1       ; Input 32 J7 Pin#27
+M41->Y:$078805,0,1      ; Output 09 J7 Pin#12 Pin#30
+M42->Y:$078805,1,1      ; Output 10 J7 Pin#13 Pin#31
+M43->Y:$078805,2,1      ; Output 11 J7 Pin#14 Pin#32
+M44->Y:$078805,3,1      ; Output 12 J7 Pin#15 Pin#33
+M45->Y:$078805,4,1      ; Output 13 J7 Pin#16 Pin#34
+M46->Y:$078805,5,1      ; Output 14 J7 Pin#17 Pin#35
+M47->Y:$078805,6,1      ; Output 15 J7 Pin#18 Pin#36
+M48->Y:$078805,7,1      ; Output 16 J7 Pin#19 Pin#37
+
+M101->X:$078001,0,24,S  ; ENC1 24-bit counter position
+M102->Y:$078002,8,16,S  ; OUT1A command value; DAC or PWM
+M103->X:$078003,0,24,S  ; ENC1 captured position
+M104->Y:$078003,8,16,S  ; OUT1B command value; DAC or PWM
+M105->Y:$078005,8,16,S  ; ADC1A input value
+M106->Y:$078006,8,16,S  ; ADC1B input value
+M107->Y:$078004,8,16,S  ; OUT1C command value; PFM or PWM
+M108->Y:$078007,0,24,S  ; ENC1 compare A position
+M109->X:$078007,0,24,S  ; ENC1 compare B position
+M110->X:$078006,0,24,S  ; ENC1 compare autoincrement value
+M111->X:$078005,11      ; ENC1 compare initial state write enable
+M112->X:$078005,12      ; ENC1 compare initial state
+M114->X:$078005,14      ; AENA1 output status
+M115->X:$078000,19      ; USER1 flag input status
+M116->X:$078000,9       ; ENC1 compare output value
+M117->X:$078000,11      ; ENC1 capture flag
+M118->X:$078000,8       ; ENC1 count error flag
+M119->X:$078000,14      ; CHC1 input status
+M120->X:$078000,16      ; HMFL1 flag input status
+M121->X:$078000,17      ; PLIM1 flag input status
+M122->X:$078000,18      ; MLIM1 flag input status
+M123->X:$078000,15      ; FAULT1 flag input status
+M124->X:$078000,20      ; Channel 1 W flag input status
+M125->X:$078000,21      ; Channel 1 V flag input status
+M126->X:$078000,22      ; Channel 1 U flag input status
+M127->X:$078000,23      ; Channel 1 T flag input status
+M128->X:$078000,20,4    ; Channel 1 TUVW inputs as 4-bit value
+M131->X:$0000B0,21,1    ; #1 Positive-end-limit-set bit
+M132->X:$0000B0,22,1    ; #1 Negative-end-limit-set bit
+M133->X:$0000B0,13,1    ; #1 Desired-velocity-zero bit
+M140->Y:$0000C0,0,1     ; #1 Background in-position bit
+M145->Y:$0000C0,10,1    ; Home Complete bit 1= homed 0 = not homed
+M172->L:$0000D7         ; #1 Variable jog position/distance (cts)
+
+M201->X:$078009,0,24,S  ; ENC2 24-bit counter position
+M202->Y:$07800A,8,16,S  ; OUT2A command value; DAC or PWM
+M203->X:$07800B,0,24,S  ; ENC2 captured position
+M204->Y:$07800B,8,16,S  ; OUT2B command value; DAC or PWM
+M205->Y:$07800D,8,16,S  ; ADC2A input value
+M206->Y:$07800E,8,16,S  ; ADC2B input value
+M207->Y:$07800C,8,16,S  ; OUT2C command value; PFM or PWM
+M208->Y:$07800F,0,24,S  ; ENC2 compare A position
+M209->X:$07800F,0,24,S  ; ENC2 compare B position
+M210->X:$07800E,0,24,S  ; ENC2 compare autoincrement value
+M211->X:$07800D,11      ; ENC2 compare initial state write enable
+M212->X:$07800D,12      ; ENC2 compare initial state
+M214->X:$07800D,14      ; AENA2 output status
+M215->X:$078008,19      ; USER2 flag input status
+M216->X:$078008,9       ; ENC2 compare output value
+M217->X:$078008,11      ; ENC2 capture flag
+M218->X:$078008,8       ; ENC2 count error flag
+M219->X:$078008,14      ; CHC2 input status
+M220->X:$078008,16      ; HMFL2 flag input status
+M221->X:$078008,17      ; PLIM2 flag input status
+M222->X:$078008,18      ; MLIM2 flag input status
+M223->X:$078008,15      ; FAULT2 flag input status
+M224->X:$078008,20      ; Channel 2 W flag input status
+M225->X:$078008,21      ; Channel 2 V flag input status
+M226->X:$078008,22      ; Channel 2 U flag input status
+M227->X:$078008,23      ; Channel 2 T flag input status
+M228->X:$078008,20,4    ; Channel 2 TUVW inputs as 4-bit value
+M231->X:$000130,21,1    ; #2 Positive-end-limit-set bit
+M232->X:$000130,22,1    ; #2 Negative-end-limit-set bit
+M233->X:$000130,13,1    ; #2 Desired-velocity-zero bit
+M240->Y:$000140,0,1     ; #2 Background in-position bit
+M245->Y:$000140,10,1 	; Home-complete bit  1= homed 0 = not homed
+M272->L:$000157         ; #2 Variable jog position/distance (cts)
+
+M301->X:$078011,0,24,S  ; ENC3 24-bit counter position
+M302->Y:$078012,8,16,S  ; OUT3A command value; DAC or PWM
+M303->X:$078013,0,24,S  ; ENC3 captured position
+M304->Y:$078013,8,16,S  ; OUT3B command value; DAC or PWM
+M305->Y:$078015,8,16,S  ; ADC3A input value
+M306->Y:$078016,8,16,S  ; ADC3B input value
+M307->Y:$078014,8,16,S  ; OUT3C command value; PFM or PWM
+M308->Y:$078017,0,24,S  ; ENC3 compare A position
+M309->X:$078017,0,24,S  ; ENC3 compare B position
+M310->X:$078016,0,24,S  ; ENC3 compare autoincrement value
+M311->X:$078015,11      ; ENC3 compare initial state write enable
+M312->X:$078015,12      ; ENC3 compare initial state
+M314->X:$078015,14      ; AENA3 output status
+M315->X:$078010,19      ; USER3 flag input status
+M316->X:$078010,9       ; ENC3 compare output value
+M317->X:$078010,11      ; ENC3 capture flag
+M318->X:$078010,8       ; ENC3 count error flag
+M319->X:$078010,14      ; CHC3 input status
+M320->X:$078010,16      ; HMFL3 flag input status
+M321->X:$078010,17      ; PLIM3 flag input status
+M322->X:$078010,18      ; MLIM3 flag input status
+M323->X:$078010,15      ; FAULT3 flag input status
+M324->X:$078010,20      ; Channel 3 W flag input status
+M325->X:$078010,21      ; Channel 3 V flag input status
+M326->X:$078010,22      ; Channel 3 U flag input status
+M327->X:$078010,23      ; Channel 3 T flag input status
+M328->X:$078010,20,4    ; Channel 3 TUVW inputs as 4-bit value
+M331->X:$0001B0,21,1    ; #3 Positive-end-limit-set bit
+M332->X:$0001B0,22,1    ; #3 Negative-end-limit-set bit
+M333->X:$0001B0,13,1    ; #3 Desired-velocity-zero bit
+M340->Y:$0001C0,0,1     ; #3 Background in-position bit
+M345->Y:$0001C0,10,1    ; #3 Home-complete bit 1= homed, 0 = not homed
+M372->L:$0001D7         ; #3 Variable jog position/distance (cts)
+
+M401->X:$078019,0,24,S  ; ENC4 24-bit counter position
+M402->Y:$07801A,8,16,S  ; OUT4A command value; DAC or PWM
+M403->X:$07801B,0,24,S  ; ENC4 captured position
+M404->Y:$07801B,8,16,S  ; OUT4B command value; DAC or PWM
+M405->Y:$07801D,8,16,S  ; ADC4A input value
+M406->Y:$07801E,8,16,S  ; ADC4B input value
+M407->Y:$07801C,8,16,S  ; OUT4C command value; PFM or PWM
+M408->Y:$07801F,0,24,S  ; ENC4 compare A position
+M409->X:$07801F,0,24,S  ; ENC4 compare B position
+M410->X:$07801E,0,24,S  ; ENC4 compare autoincrement value
+M411->X:$07801D,11      ; ENC4 compare initial state write enable
+M412->X:$07801D,12      ; ENC4 compare initial state
+M414->X:$07801D,14      ; AENA4 output status
+M415->X:$078018,19      ; USER4 flag input status
+M416->X:$078018,9       ; ENC4 compare output value
+M417->X:$078018,11      ; ENC4 capture flag
+M418->X:$078018,8       ; ENC4 count error flag
+M419->X:$078018,14      ; CHC4 flag input status
+M420->X:$078018,16      ; HMFL4 input status
+M421->X:$078018,17      ; PLIM4 flag input status
+M422->X:$078018,18      ; MLIM4 flag input status
+M423->X:$078018,15      ; FAULT4 flag input status
+M424->X:$078018,20      ; Channel 4 W flag input status
+M425->X:$078018,21      ; Channel 4 V flag input status
+M426->X:$078018,22      ; Channel 4 U flag input status
+M427->X:$078018,23      ; Channel 4 T flag input status
+M428->X:$078018,20,4    ; Channel 4 TUVW inputs as 4-bit value
+M431->X:$000230,21,1    ; #4 Positive-end-limit-set bit
+M432->X:$000230,22,1    ; #4 Negative-end-limit-set bit
+M433->X:$000230,13,1    ; #4 Desired-velocity-zero bit
+M440->Y:$000240,0,1     ; #4 Background in-position bit
+M445->Y:$000240,10,1    ; #4 Home-complete bit 1= homed, 0 = not homed
+M472->L:$000257         ; #4 Variable jog position/distance (cts)
+
+M501->X:$078101,0,24,S  ; ENC5 24-bit counter position
+M502->Y:$078102,8,16,S  ; OUT5A command value; DAC or PWM
+M503->X:$078103,0,24,S  ; ENC5 captured position
+M504->Y:$078103,8,16,S  ; OUT5B command value; DAC or PWM
+M505->Y:$078105,8,16,S  ; ADC5A input value
+M506->Y:$078106,8,16,S  ; ADC5B input value
+M507->Y:$078104,8,16,S  ; OUT5C command value; PFM or PWM
+M508->Y:$078107,0,24,S  ; ENC5 compare A position
+M509->X:$078107,0,24,S  ; ENC5 compare B position
+M510->X:$078106,0,24,S  ; ENC5 compare autoincrement value
+M511->X:$078105,11      ; ENC5 compare initial state write enable
+M512->X:$078105,12      ; ENC5 compare initial state
+M514->X:$078105,14      ; AENA5 output status
+M515->X:$078100,19      ; USER5 flag input status
+M516->X:$078100,9       ; ENC5 compare output value
+M517->X:$078100,11      ; ENC5 capture flag
+M518->X:$078100,8       ; ENC5 count error flag
+M519->X:$078100,14      ; CHC5 input status
+M520->X:$078100,16      ; HMFL5 flag input status
+M521->X:$078100,17      ; PLIM5 flag input status
+M522->X:$078100,18      ; MLIM5 flag input status
+M523->X:$078100,15      ; FAULT5 flag input status
+M524->X:$078100,20      ; Channel 5 W flag input status
+M525->X:$078100,21      ; Channel 5 V flag input status
+M526->X:$078100,22      ; Channel 5 U flag input status
+M527->X:$078100,23      ; Channel 5 T flag input status
+M528->X:$078100,20,4    ; Channel 5 TUVW inputs as 4-bit value
+M531->X:$0002B0,21,1    ; #5 Positive-end-limit-set bit
+M532->X:$0002B0,22,1    ; #5 Negative-end-limit-set bit
+M533->X:$0002B0,13,1    ; #5 Desired-velocity-zero bit
+M540->Y:$0002C0,0,1     ; #5 Background in-position bit
+M545->Y:$0002C0,10,1    ; #5 Home-complete bit 1= homed, 0 = not homed
+M572->L:$0002D7         ; #5 Variable jog position/distance (cts)
+
+M601->X:$078109,0,24,S  ; ENC6 24-bit counter position
+M602->Y:$07810A,8,16,S  ; OUT6A command value; DAC or PWM
+M603->X:$07810B,0,24,S  ; ENC6 captured position
+M604->Y:$07810B,8,16,S  ; OUT6B command value; DAC or PWM
+M605->Y:$07810D,8,16,S  ; ADC6A input value
+M606->Y:$07810E,8,16,S  ; ADC6B input value
+M607->Y:$07810C,8,16,S  ; OUT6C command value; PFM or PWM
+M608->Y:$07810F,0,24,S  ; ENC6 compare A position
+M609->X:$07810F,0,24,S  ; ENC6 compare B position
+M610->X:$07810E,0,24,S  ; ENC6 compare autoincrement value
+M611->X:$07810D,11      ; ENC6 compare initial state write enable
+M612->X:$07810D,12      ; ENC6 compare initial state
+M614->X:$07810D,14      ; AENA6 output status
+M615->X:$078108,19      ; USER6 flag input status
+M616->X:$078108,9       ; ENC6 compare output value
+M617->X:$078108,11      ; ENC6 capture flag
+M618->X:$078108,8       ; ENC6 count error flag
+M619->X:$078108,14      ; CHC6 input status
+M620->X:$078108,16      ; HMFL6 flag input status
+M621->X:$078108,17      ; PLIM6 flag input status
+M622->X:$078108,18      ; MLIM6 flag input status
+M623->X:$078108,15      ; FAULT6 flag input status
+M624->X:$078108,20      ; Channel 6 W flag input status
+M625->X:$078108,21      ; Channel 6 V flag input status
+M626->X:$078108,22      ; Channel 6 U flag input status
+M627->X:$078108,23      ; Channel 6 T flag input status
+M628->X:$078108,20,4    ; Channel 6 TUVW inputs as 4-bit value
+M631->X:$000330,21,1    ; #6 Positive-end-limit-set bit
+M632->X:$000330,22,1    ; #6 Negative-end-limit-set bit
+M633->X:$000330,13,1    ; #6 Desired-velocity-zero bit
+M640->Y:$000340,0,1     ; #6 Background in-position bit
+M645->Y:$000340,10,1    ; #6 Home-complete bit 1=homed, 0=not homed
+M672->L:$000357         ; #6 Variable jog position/distance (cts)
+
+M701->X:$078111,0,24,S  ; ENC7 24-bit counter position
+M702->Y:$078112,8,16,S  ; OUT7A command value; DAC or PWM
+M703->X:$078113,0,24,S  ; ENC7 captured position
+M704->Y:$078113,8,16,S  ; OUT7B command value; DAC or PWM
+M705->Y:$078115,8,16,S  ; ADC7A input value
+M706->Y:$078116,8,16,S  ; ADC7B input value
+M707->Y:$078114,8,16,S  ; OUT7C command value; PFM or PWM
+M708->Y:$078117,0,24,S  ; ENC7 compare A position
+M709->X:$078117,0,24,S  ; ENC7 compare B position
+M710->X:$078116,0,24,S  ; ENC7 compare autoincrement value
+M711->X:$078115,11      ; ENC7 compare initial state write enable
+M712->X:$078115,12      ; ENC7 compare initial state
+M714->X:$078115,14      ; AENA7 output status
+M715->X:$078110,19      ; CHC7 input status
+M716->X:$078110,9       ; ENC7 compare output value
+M717->X:$078110,11      ; ENC7 capture flag
+M718->X:$078110,8       ; ENC7 count error flag
+M719->X:$078110,14      ; CHC7 input status
+M720->X:$078110,16      ; HMFL7 flag input status
+M721->X:$078110,17      ; PLIM7 flag input status
+M722->X:$078110,18      ; MLIM7 flag input status
+M723->X:$078110,15      ; FAULT7 flag input status
+M724->X:$078110,20      ; Channel 7 W flag input status
+M725->X:$078110,21      ; Channel 7 V flag input status
+M726->X:$078110,22      ; Channel 7 U flag input status
+M727->X:$078110,23      ; Channel 7 T flag input status
+M728->X:$078110,20,4    ; Channel 7 TUVW inputs as 4-bit value
+M731->X:$0003B0,21,1    ; #7 Positive-end-limit-set bit
+M732->X:$0003B0,22,1    ; #7 Negative-end-limit-set bit
+M733->X:$0003B0,13,1    ; #7 Desired-velocity-zero bit
+M740->Y:$0003C0,0,1     ; #7 Background in-position bit
+M745->Y:$0003C0,10,1    ; #7 Home-complete bit 1 = homed, 0 = not homed
+M772->L:$0003D7         ; #7 Variable jog position/distance (cts)
+
+M801->X:$078119,0,24,S  ; ENC8 24-bit counter position
+M802->Y:$07811A,8,16,S  ; OUT8A command value; DAC or PWM
+M803->X:$07811B,0,24,S  ; ENC8 captured position
+M804->Y:$07811B,8,16,S  ; OUT8B command value; DAC or PWM
+M805->Y:$07811D,8,16,S  ; ADC8A input value
+M806->Y:$07811E,8,16,S  ; ADC8B input value
+M807->Y:$07811C,8,16,S  ; OUT8C command value; PFM or PWM
+M808->Y:$07811F,0,24,S  ; ENC8 compare A position
+M809->X:$07811F,0,24,S  ; ENC8 compare B position
+M810->X:$07811E,0,24,S  ; ENC8 compare autoincrement value
+M811->X:$07811D,11      ; ENC8 compare initial state write enable
+M812->X:$07811D,12      ; ENC8 compare initial state
+M814->X:$07811D,14      ; AENA8 output status
+M815->X:$078118,19      ; USER8 flag input status
+M816->X:$078118,9       ; ENC8 compare output value
+M817->X:$078118,11      ; ENC8 capture flag
+M818->X:$078118,8       ; ENC8 count error flag
+M819->X:$078118,14      ; CHC8 input status
+M820->X:$078118,16      ; HMFL8 flag input status
+M821->X:$078118,17      ; PLIM8 flag input status
+M822->X:$078118,18      ; MLIM8 flag input status
+M823->X:$078118,15      ; FAULT8 flag input status
+M824->X:$078118,20      ; Channel 8 W flag input status
+M825->X:$078118,21      ; Channel 8 V flag input status
+M826->X:$078118,22      ; Channel 8 U flag input status
+M827->X:$078118,23      ; Channel 8 T flag input status
+M828->X:$078118,20,4    ; Channel 8 TUVW inputs as 4-bit value
+M831->X:$000430,21,1    ; #8 Positive-end-limit-set bit
+M832->X:$000430,22,1    ; #8 Negative-end-limit-set bit
+M833->X:$000430,13,1    ; #8 Desired-velocity-zero bit
+M840->Y:$000440,0,1     ; #8 Background in-position bit
+M845->Y:$000440,10,1    ; #8 Home-complete bit 1 = homed, 0 = not homed
+M872->L:$000457         ; #8 Variable jog position/distance (cts)
+
+M178->Y:$0000CE,0,24,s  ; Motor 1 Home Capture Position
+M173->Y:$0000CE,0,24,S  ; #1 Encoder home capture position (cts)
+M273->Y:$00014E,0,24,S  ; #2 Encoder home capture position (cts)
+M373->Y:$0001CE,0,24,S  ; #3 Encoder home capture position (cts)
+M473->Y:$00024E,0,24,S  ; #4 Encoder home capture position (cts)
+M573->Y:$0002CE,0,24,S  ; #5 Encoder home capture position (cts)
+M673->Y:$00034E,0,24,S  ; #6 Encoder home capture position (cts)
+M773->Y:$0003CE,0,24,S  ; #7 Encoder home capture position (cts)
+M873->Y:$00044E,0,24,S  ; #8 Encoder home capture position (cts)
+I5060=8 		; Copy 8 ADC pairs
+I5061=$000340 		; ADC0 is referenced to $078800+$000340= $78B40
+I5062=$000340 		; ADC1 is referenced to $078800+$000340= $78B40
+I5063=$000340 		; ADC2 is referenced to $078800+$000340= $78B40
+I5064=$000340 		; ADC3 is referenced to $078800+$000340= $78B40
+I5065=$000340 		; ADC4 is referenced to $078800+$000340= $78B40
+I5066=$000340 		; ADC5 is referenced to $078800+$000340= $78B40
+I5067=$000340 		; ADC6 is referenced to $078800+$000340= $78B40
+I5068=$000340 		; ADC7 is referenced to $078800+$000340= $78B40
+I5081=$000000 		; ADC0 Unipolar
+I5082=$000001 		; ADC1 Unipolar
+I5083=$000002 		; ADC2 Unipolar
+I5084=$000003 		; ADC3 Unipolar
+I5085=$000004 		; ADC4 Unipolar
+I5086=$000005 		; ADC5 Unipolar
+I5087=$000006 		; ADC6 Unipolar
+I5088=$000007 		; ADC7 Unipolar
+M7080->Y:$003400,12,12,U 	; ADC0
+M7081->Y:$003402,12,12,U 	; ADC1
+M7082->Y:$003404,12,12,U 	; ADC2
+M7083->Y:$003406,12,12,U 	; ADC3
+M7084->Y:$003408,12,12,U 	; ADC4
+M7085->Y:$00340A,12,12,U 	; ADC5
+M7086->Y:$00340C,12,12,U 	; ADC6
+M7087->Y:$00340E,12,12,U 	; ADC7
+
+
+
